@@ -1,0 +1,15 @@
+<?php
+
+    include 'conn_maula_abi.php';
+
+    $id = $_POST['id'];
+    $nama = $_POST['nama'];
+    $jabatan = $_POST['jabatan'];
+    $alamat = $_POST['alamat'];
+    $notlp = $_POST['notlp'];
+    $namaistri = $_POST['namaistri'];
+    $namaanak = $_POST['namaanak'];
+
+    $connect->query("UPDATE tb_karyawan SET nama='".$nama."', jabatan='".$jabatan."', alamat='".$alamat."',no_tlp='".$notlp."',nama_istri='".$namaistri."', nama_anak='".$namaanak."' WHERE  id=". $id);
+
+?>
