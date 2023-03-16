@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:new_db/edit_data.dart';
 import 'package:new_db/theme.dart';
-import 'edit_data_dart_maula_abi.dart';
 import 'package:http/http.dart' as http;
 import 'package:new_db/main.dart';
-import 'package:new_db/detail_data_dart_maula_abi.dart';
 
 class Detail extends StatefulWidget {
   List list;
@@ -15,7 +14,7 @@ class Detail extends StatefulWidget {
 
 class _DetailState extends State<Detail> {
   void deleteData() {
-    var url = "http://192.168.1.4/db_maula_abi/deletedata_maula_abi.php";
+    var url = "http://192.168.1.11/db_maula_abi/deletedata_maula_abi.php";
     http.post(url, body: {'id': widget.list[widget.index]['id']});
   }
 
@@ -26,7 +25,7 @@ class _DetailState extends State<Detail> {
       actions: <Widget>[
         Card(
           color: Color(0xFFD72631),
-          child: FlatButton(
+          child: TextButton(
               child: Text(
                 "OK DELETE",
                 style: regularTextStyle,
@@ -43,7 +42,7 @@ class _DetailState extends State<Detail> {
         ),
         Card(
           color: Color(0xFF3A6B35),
-          child: FlatButton(
+          child: TextButton(
               child: Text("CANCEL", style: regularTextStyle),
               onPressed: () => Navigator.pop(context)),
         ),
@@ -105,17 +104,17 @@ class _DetailState extends State<Detail> {
                                 color: Color(0xFF3E3E3E), fontSize: 18),
                           ),
                           Text(
-                            "Nomer_Telp : ${widget.list[widget.index]['no_tlp']}",
+                            "Nomer_Telp : ${widget.list[widget.index]['notlp']}",
                             style: regularTextStyle.copyWith(
                                 color: Color(0xFF3E3E3E), fontSize: 18),
                           ),
                           Text(
-                            "Divisi : ${widget.list[widget.index]['nama_istri']}",
+                            "Divisi : ${widget.list[widget.index]['namaistri']}",
                             style: regularTextStyle.copyWith(
                                 color: Color(0xFF3E3E3E), fontSize: 18),
                           ),
                           Text(
-                            "Level :  ${widget.list[widget.index]['nama_anak']}",
+                            "Level :  ${widget.list[widget.index]['namaanak']}",
                             style: regularTextStyle.copyWith(
                                 color: Color(0xFF3E3E3E), fontSize: 18),
                           ),
@@ -137,7 +136,7 @@ class _DetailState extends State<Detail> {
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
                     color: Color(0xFF3A6B35),
-                    child: FlatButton(
+                    child: TextButton(
                       onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (BuildContext context) => EditData(
@@ -153,7 +152,7 @@ class _DetailState extends State<Detail> {
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
                     color: Color(0xFFD72631),
-                    child: FlatButton(
+                    child: TextButton(
                       onPressed: () => confirm(),
                       child: Text(
                         "Delete",

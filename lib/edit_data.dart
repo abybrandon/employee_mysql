@@ -22,7 +22,7 @@ class _EditDataState extends State<EditData> {
   TextEditingController controllerNamaanak;
 
   void editData() {
-    var url = "http://192.168.1.4/db_maula_abi/editdata_maula_abi.php";
+    var url = "http://192.168.1.11/db_maula_abi/editdata_maula_abi.php";
     http.post(url, body: {
       "id": widget.list[widget.index]['id'],
       "nama": controllerNama.text,
@@ -46,13 +46,13 @@ class _EditDataState extends State<EditData> {
       text: widget.list[widget.index]['alamat'],
     );
     controllerNotlp = TextEditingController(
-      text: widget.list[widget.index]['no_tlp'],
+      text: widget.list[widget.index]['notlp'],
     );
     controllerNamaistri = TextEditingController(
-      text: widget.list[widget.index]['nama_istri'],
+      text: widget.list[widget.index]['namaistri'],
     );
     controllerNamaanak = TextEditingController(
-      text: widget.list[widget.index]['nama_anak'],
+      text: widget.list[widget.index]['namaanak'],
     );
 
     super.initState();
@@ -105,7 +105,7 @@ class _EditDataState extends State<EditData> {
               Padding(padding: EdgeInsets.all(10.0)),
               Card(
                 color: Color(0xFF3A6B35),
-                child: FlatButton(
+                child: TextButton(
                   child: Text(
                     "Save Data",
                     style: regularTextStyle,

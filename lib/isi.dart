@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'edit_data_dart_maula_abi.dart';
 import 'package:http/http.dart' as http;
 import 'package:new_db/main.dart';
 
@@ -13,7 +12,7 @@ class Isi extends StatefulWidget {
 
 class _IsiState extends State<Isi> {
   void deleteData() {
-    var url = "http://192.168.1.4/db_maula_abi/deletedata_maula_abi.php";
+    var url = "http://192.168.1.11/db_maula_abi/deletedata_maula_abi.php";
     http.post(url, body: {'id': widget.list[widget.index]['id']});
   }
 

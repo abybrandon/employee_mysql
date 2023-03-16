@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:new_db/add_data.dart';
+import 'package:new_db/detail_data.dart';
 import 'package:new_db/isi.dart';
 import 'package:new_db/theme.dart';
-import 'detail_data_dart_maula_abi.dart';
-import 'add_data_dart_maula_abi.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -28,7 +28,7 @@ class _MaulaAbiState extends State<MaulaAbi> {
 
   Future<List> getData() async {
     final response =
-        await http.get("http://192.168.1.4/db_maula_abi/getdata_maula_abi.php");
+        await http.get("http://192.168.1.11/db_maula_abi/getdata_maula_abi.php");
     return json.decode(response.body);
   }
 
@@ -73,9 +73,16 @@ class _MaulaAbiState extends State<MaulaAbi> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child: Icon(
-                      Icons.more_vert,
-                      color: Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          
+                        });
+                      },
+                      child: Icon(
+                        Icons.refresh,
+                        color: Colors.white,
+                      ),
                     ),
                   )
                 ],
@@ -145,7 +152,7 @@ class _ItemListState extends State<ItemList> {
                       title: Text("Nama Lengkap : " + widget.list[i]['nama']),
                     ),
                     ListTile(
-                      title: Text("No Telpon : " + widget.list[i]['no_tlp']),
+                      title: Text("No Telpon : " + widget.list[i]['notlp']),
                     ),
                   ],
                 ),

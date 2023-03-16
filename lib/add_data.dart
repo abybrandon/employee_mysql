@@ -12,7 +12,7 @@ class AddData extends StatelessWidget {
   TextEditingController controllerNamaanak = TextEditingController();
 
   void addData() {
-    var url = "http://192.168.1.4/db_maula_abi/adddata_maula_abi.php";
+    var url = "http://192.168.1.11/db_maula_abi/adddata_maula_abi.php";
 
     http.post(url, body: {
       "nama": controllerNama.text,
@@ -71,7 +71,7 @@ class AddData extends StatelessWidget {
                 Padding(padding: EdgeInsets.all(10.0)),
                 Card(
                   color: Color(0xFF3A6B35),
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text(
                       "Add Data",
                       style: TextStyle(color: Colors.white),

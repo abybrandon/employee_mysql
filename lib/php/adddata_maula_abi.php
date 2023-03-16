@@ -9,6 +9,6 @@ $notlp = $_POST['notlp'];
 $namaistri = $_POST['namaistri'];
 $namaanak = $_POST['namaanak'];
 
-$connect->query("INSERT INTO tb_karyawan (nama,jabatan,alamat,no_tlp,nama_istri,nama_anak) VALUES ('".$nama."','".$jabatan."','".$alamat."','".$notlp."','".$namaistri."','".$namaanak."')")
+$connect->query("INSERT INTO tb_karyawan (nama,jabatan,alamat,notlp,namaistri,namaanak) VALUES ('".$nama."','".$jabatan."','".$alamat."','".$notlp."','".$namaistri."','".$namaanak."')")
 
 ?>
